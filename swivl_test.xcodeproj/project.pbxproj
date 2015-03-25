@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		473CE0421AC2F1D90018A1BA /* BigPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473CE0411AC2F1D90018A1BA /* BigPhotoViewController.m */; };
 		474545F91AC1A21300B3610D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 474545F81AC1A21300B3610D /* main.m */; };
 		474545FC1AC1A21300B3610D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 474545FB1AC1A21300B3610D /* AppDelegate.m */; };
 		474546021AC1A21300B3610D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474546001AC1A21300B3610D /* Main.storyboard */; };
@@ -33,6 +34,8 @@
 /* Begin PBXFileReference section */
 		27AB8B3A58B8CDB1532C668E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		414E75F0BAB7A1A5826F7A7B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		473CE0401AC2F1D90018A1BA /* BigPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BigPhotoViewController.h; path = Classes/BigPhotoViewController.h; sourceTree = "<group>"; };
+		473CE0411AC2F1D90018A1BA /* BigPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BigPhotoViewController.m; path = Classes/BigPhotoViewController.m; sourceTree = "<group>"; };
 		474545F31AC1A21300B3610D /* swivl_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swivl_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		474545F71AC1A21300B3610D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		474545F81AC1A21300B3610D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 			children = (
 				474546281AC1AECC00B3610D /* GithubUsersViewController.h */,
 				474546291AC1AECC00B3610D /* GithubUsersViewController.m */,
+				473CE0401AC2F1D90018A1BA /* BigPhotoViewController.h */,
+				473CE0411AC2F1D90018A1BA /* BigPhotoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 			files = (
 				474546211AC1A75200B3610D /* GithubUserCell.m in Sources */,
 				474545FC1AC1A21300B3610D /* AppDelegate.m in Sources */,
+				473CE0421AC2F1D90018A1BA /* BigPhotoViewController.m in Sources */,
 				474546271AC1AB1000B3610D /* WebAPI.m in Sources */,
 				4745462A1AC1AECC00B3610D /* GithubUsersViewController.m in Sources */,
 				474546241AC1AA8E00B3610D /* GithubUser.m in Sources */,

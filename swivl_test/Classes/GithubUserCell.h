@@ -14,6 +14,7 @@
 @protocol GithubUserCellDelegate <NSObject>
 
 - (void)GithubUserCell:(GithubUserCell *)cell openHtmlUrlForUser:(GithubUser *)githubUser;
+- (void)GithubUserCell:(GithubUserCell *)cell openBigPhotoForUser:(GithubUser *)githubUser;
 
 @end
 

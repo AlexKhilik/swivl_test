@@ -10,6 +10,7 @@
 #import "GithubUser.h"
 #import "GithubUserCell.h"
 #import "WebAPI.h"
+#import "BigPhotoViewController.h"
 
 #define ROW_HEIGHT 100.0;
 
@@ -44,6 +45,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Navigation -
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"toBigPhoto"]){
+        BigPhotoViewController *dst = segue.destinationViewController;
+        dst.githubUser = _selectedGithubUser;
+    }
+}
+
 #pragma mark - Table view data source -
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -68,6 +78,11 @@
 
 - (void)GithubUserCell:(GithubUserCell *)cell openHtmlUrlForUser:(GithubUser *)githubUser{
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:githubUser.htmlUrl]];
+}
+
+- (void)GithubUserCell:(GithubUserCell *)cell openBigPhotoForUser:(GithubUser *)githubUser{
+    _selectedGithubUser = githubUser;
+    [self performSegueWithIdentifier:@"toBigPhoto" sender:self];
 }
 
 #pragma mark - Private -
