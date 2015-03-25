@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *htmlUrlBtn;
 
 - (IBAction)htmlUrlBtnTap:(id)sender;
+- (IBAction)avatarBtnTap:(id)sender;
 
 @end
 
@@ -42,6 +43,12 @@
 - (IBAction)htmlUrlBtnTap:(id)sender {
     if([self.delegate respondsToSelector:@selector(GithubUserCell:openHtmlUrlForUser:)]){
         [self.delegate GithubUserCell:self openHtmlUrlForUser:self.githubUser];
+    }
+}
+
+- (IBAction)avatarBtnTap:(id)sender {
+    if([self.delegate respondsToSelector:@selector(GithubUserCell:openBigPhotoForUser:)]){
+        [self.delegate GithubUserCell:self openBigPhotoForUser:self.githubUser];
     }
 }
 

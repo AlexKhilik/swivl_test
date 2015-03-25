@@ -57,9 +57,23 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yp8-cd-ZKx">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="Mnf-CZ-Yf7"/>
+                                                <constraint firstAttribute="height" constant="100" id="kdY-hK-VLW"/>
+                                            </constraints>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="avatarBtnTap:" destination="cgI-Zm-0Oe" eventType="touchUpInside" id="BJW-tD-gOK"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="wEG-Mx-XzU" firstAttribute="leading" secondItem="XBx-0h-KfR" secondAttribute="trailing" constant="16" id="2wo-M5-r35"/>
+                                        <constraint firstAttribute="centerY" secondItem="Yp8-cd-ZKx" secondAttribute="centerY" id="4tV-RM-bo6"/>
                                         <constraint firstItem="Vin-L4-UCF" firstAttribute="leading" secondItem="XBx-0h-KfR" secondAttribute="trailing" constant="16" id="7Iw-hF-NW8"/>
                                         <constraint firstItem="XBx-0h-KfR" firstAttribute="leading" secondItem="C30-Jf-Htg" secondAttribute="leading" id="9VL-e9-4MW"/>
                                         <constraint firstAttribute="trailing" secondItem="Vin-L4-UCF" secondAttribute="trailing" constant="8" id="KuB-Fm-fLU"/>
@@ -70,6 +84,7 @@
                                         <constraint firstAttribute="centerY" secondItem="XBx-0h-KfR" secondAttribute="centerY" id="lHc-nT-XNP"/>
                                         <constraint firstAttribute="trailing" secondItem="gCf-6w-9Lh" secondAttribute="trailing" constant="8" id="m1j-DZ-ria"/>
                                         <constraint firstItem="gCf-6w-9Lh" firstAttribute="leading" secondItem="XBx-0h-KfR" secondAttribute="trailing" constant="16" id="z85-Ah-2oY"/>
+                                        <constraint firstItem="Yp8-cd-ZKx" firstAttribute="leading" secondItem="C30-Jf-Htg" secondAttribute="leading" id="zrL-X2-34p"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -86,10 +101,54 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Github Users" id="Qxf-Ie-Yla"/>
+                    <connections>
+                        <segue destination="jUl-xo-V0E" kind="presentation" identifier="toBigPhoto" modalTransitionStyle="partialCurl" id="qsN-vM-O3I"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eng-NK-xLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1075" y="416"/>
+            <point key="canvasLocation" x="1075" y="412"/>
+        </scene>
+        <!--Big Photo View Controller-->
+        <scene sceneID="40S-Jp-ZZe">
+            <objects>
+                <viewController modalTransitionStyle="partialCurl" id="jUl-xo-V0E" customClass="BigPhotoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vhy-ee-mJW"/>
+                        <viewControllerLayoutGuide type="bottom" id="6oa-cl-EYI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="89b-gv-TfD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y1f-Pb-uaW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Y1f-Pb-uaW" firstAttribute="leading" secondItem="89b-gv-TfD" secondAttribute="leading" id="4cj-gb-bVy"/>
+                            <constraint firstItem="6oa-cl-EYI" firstAttribute="top" secondItem="Y1f-Pb-uaW" secondAttribute="bottom" id="Yeg-BW-DEw"/>
+                            <constraint firstItem="Y1f-Pb-uaW" firstAttribute="top" secondItem="89b-gv-TfD" secondAttribute="top" id="f43-fo-u67"/>
+                            <constraint firstAttribute="trailing" secondItem="Y1f-Pb-uaW" secondAttribute="trailing" id="tkF-fq-rvx"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="FF0-Bz-Bh8" appends="YES" id="TzG-eK-4bj"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="Y1f-Pb-uaW" id="lE4-Sy-mAH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hPY-cp-dgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="FF0-Bz-Bh8">
+                    <connections>
+                        <action selector="tapBehind:" destination="jUl-xo-V0E" id="t4P-IF-2mJ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1751" y="419"/>
         </scene>
     </scenes>
 </document>
