@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5og-8Z-K4y">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Github Users-->
+        <scene sceneID="9gi-Yd-IQ3">
+            <objects>
+                <tableViewController id="5og-8Z-K4y" customClass="GithubUsersViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="UT8-Dc-YKi">
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GithubUserCell" rowHeight="100" id="cgI-Zm-0Oe" customClass="GithubUserCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cgI-Zm-0Oe" id="C30-Jf-Htg">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XBx-0h-KfR">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="NF1-VY-HaH"/>
+                                                <constraint firstAttribute="height" constant="100" id="fhu-rS-Zhx"/>
+                                            </constraints>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEG-Mx-XzU">
+                                            <rect key="frame" x="116" y="63" width="476" height="31"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="31" id="waB-MR-zma"/>
+                                            </constraints>
+                                            <state key="normal" title="HTML URL">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="htmlUrlBtnTap:" destination="cgI-Zm-0Oe" eventType="touchUpInside" id="Wjt-C3-9H3"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HTML URL (click to open):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCf-6w-9Lh">
+                                            <rect key="frame" x="116" y="47" width="476" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="ZHI-cA-5w0"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vin-L4-UCF">
+                                            <rect key="frame" x="116" y="9" width="476" height="31"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="31" id="s3J-jb-eTr"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="wEG-Mx-XzU" firstAttribute="leading" secondItem="XBx-0h-KfR" secondAttribute="trailing" constant="16" id="2wo-M5-r35"/>
+                                        <constraint firstItem="Vin-L4-UCF" firstAttribute="leading" secondItem="XBx-0h-KfR" secondAttribute="trailing" constant="16" id="7Iw-hF-NW8"/>
+                                        <constraint firstItem="XBx-0h-KfR" firstAttribute="leading" secondItem="C30-Jf-Htg" secondAttribute="leading" id="9VL-e9-4MW"/>
+                                        <constraint firstAttribute="trailing" secondItem="Vin-L4-UCF" secondAttribute="trailing" constant="8" id="KuB-Fm-fLU"/>
+                                        <constraint firstAttribute="bottom" secondItem="gCf-6w-9Lh" secondAttribute="bottom" constant="31.5" id="O2u-5r-1u2"/>
+                                        <constraint firstAttribute="trailing" secondItem="wEG-Mx-XzU" secondAttribute="trailing" constant="8" id="XGe-Ea-2Ag"/>
+                                        <constraint firstItem="Vin-L4-UCF" firstAttribute="top" secondItem="C30-Jf-Htg" secondAttribute="top" constant="9" id="gO8-NN-3J2"/>
+                                        <constraint firstAttribute="bottom" secondItem="wEG-Mx-XzU" secondAttribute="bottom" constant="5.5" id="i74-2O-rho"/>
+                                        <constraint firstAttribute="centerY" secondItem="XBx-0h-KfR" secondAttribute="centerY" id="lHc-nT-XNP"/>
+                                        <constraint firstAttribute="trailing" secondItem="gCf-6w-9Lh" secondAttribute="trailing" constant="8" id="m1j-DZ-ria"/>
+                                        <constraint firstItem="gCf-6w-9Lh" firstAttribute="leading" secondItem="XBx-0h-KfR" secondAttribute="trailing" constant="16" id="z85-Ah-2oY"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avatarImageView" destination="XBx-0h-KfR" id="UNJ-6U-Hz4"/>
+                                    <outlet property="htmlUrlBtn" destination="wEG-Mx-XzU" id="SvH-yt-3qN"/>
+                                    <outlet property="loginLabel" destination="Vin-L4-UCF" id="4Xg-oc-ZJO"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5og-8Z-K4y" id="T8i-WV-fSS"/>
+                            <outlet property="delegate" destination="5og-8Z-K4y" id="Fgx-1M-5Z2"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Github Users" id="Qxf-Ie-Yla"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eng-NK-xLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1075" y="416"/>
+        </scene>
+    </scenes>
+</document>
